@@ -52,3 +52,4 @@ if (isset($_SESSION["is_login"])) {
 <!-- NOTE DARI BRANCH LUAR -->
 <p>Dari Xteam</p>
 <p>PUSH LAGI KESEKIAN KALINYA</p>
+<b>ini push dari xbike9</b>
