@@ -48,3 +48,5 @@ if (isset($_SESSION["is_login"])) {
 </div>
 <!-- End of Page Wrapper -->
 <?php include "template/footer.php" ?>
+
+<!-- NOTE DARI BRANCH LUAR -->
