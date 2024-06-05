@@ -50,3 +50,4 @@ if (isset($_SESSION["is_login"])) {
 <?php include "template/footer.php" ?>
 
 <!-- NOTE DARI BRANCH LUAR -->
+<p>Dari Xteam</p>
