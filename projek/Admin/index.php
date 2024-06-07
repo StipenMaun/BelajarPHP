@@ -48,8 +48,3 @@ if (isset($_SESSION["is_login"])) {
 </div>
 <!-- End of Page Wrapper -->
 <?php include "template/footer.php" ?>
-
-<!-- NOTE DARI BRANCH LUAR -->
-<p>Dari Xteam</p>
-<p>PUSH LAGI KESEKIAN KALINYA</p>
-<b>ini push dari xbike99</b>

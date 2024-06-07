@@ -30,7 +30,7 @@ $data_user = mysqli_fetch_assoc($sql_where);
                             <label for="pswd">Password</label>
                         </div>
                         <div class="col-md-8">
-                            <input type="password" class="form-control" name="pswd" required>
+                            <input type="password" class="form-control" name="pswd">
                         </div>
                     </div>
                     <div class="row mb-2">
@@ -39,9 +39,21 @@ $data_user = mysqli_fetch_assoc($sql_where);
                         </div>
                         <div class="col-md-8">
                             <select name="level" id="level" class="form-control">
-                                <option value="1">Admin</option>
-                                <option value="2">User</option>
-                                <option value="3">Owner</option>
+                                <option value="1" <?= ($data_user['level'] == 1) ? 'selected' : '' ?>>Admin
+                                </option>
+                                <option value="2" <?= ($data_user['level'] == 2) ? 'selected' : '' ?>>User</option>
+                                <option value="3" <?= ($data_user['level'] == 3) ? 'selected' : '' ?>>Owner</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label for="status">Status</label>
+                        </div>
+                        <div class="col-md-8">
+                            <select name="status" id="status" class="form-control">
+                                <option value="1" <?= ($data_user['status'] == 1) ? 'selected' : '' ?>>Aktif</option>
+                                <option value="0" <?= ($data_user['status'] == 0) ? 'selected' : '' ?>>Non Aktif</option>
                             </select>
                         </div>
                     </div>

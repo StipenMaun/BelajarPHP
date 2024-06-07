@@ -6,21 +6,36 @@ $pesan = "";
 
 if (isset($_POST["submit"])) {
     $user = $_POST["user"];
-    $pswd = $_POST['pswd'];
+    $pswd = $_POST["pswd"];
     $level = $_POST["level"];
+    $status = $_POST["status"];
     $pass_hash = hash("sha256", $pswd);
     $id = $_POST["id"];
 
-    try {
-        $sql = mysqli_query($db, "UPDATE tbl_users SET username='$user', password='$pass_hash', level='$level' WHERE id='$id'");
+    if ($pswd == "") {
+        try {
+            $sql = mysqli_query($db, "UPDATE tbl_users SET username='$user', level='$level', status='$status' WHERE id='$id'");
 
-        if ($sql) {
-            $pesan = "Update data user berhasil.";
-        } else {
-            $pesan = "Update data user gagal.";
+            if ($sql) {
+                $pesan = "Update data user berhasil.";
+            } else {
+                $pesan = "Update data user gagal.";
+            }
+        } catch (Exception $e) {
+            $pesan = "Silakan input yang lain. Username sudah ada.";
         }
-    } catch (Exception $e) {
-        $pesan = "Silakan input yang lain. Username sudah ada.";
+    } else {
+        try {
+            $sql = mysqli_query($db, "UPDATE tbl_users SET username='$user', password='$pass_hash', level='$level', status='$status' WHERE id='$id'");
+
+            if ($sql) {
+                $pesan = "Update data user berhasil.";
+            } else {
+                $pesan = "Update data user gagal.";
+            }
+        } catch (Exception $e) {
+            $pesan = "Silakan input yang lain. Username sudah ada.";
+        }
     }
 
     unset($_SESSION["title"]); // kosongkan sesi title
