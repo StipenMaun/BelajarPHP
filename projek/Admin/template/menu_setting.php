@@ -26,6 +26,22 @@ if ($_GET["page"] == "dashboard") {
     $_SESSION["title"] = "Master Barang Edit";
     $_SESSION["page"] = "aksi/edit_barang.php";
     header("Location: ../");
+} elseif ($_GET["page"] == "transaksi") {
+    // $_SESSION["id_barang"] = $_GET["id"];
+    $_SESSION["title"] = "Transaksi";
+    $_SESSION["page"] = "transaksi/data_transaksi.php";
+    header("Location: ../");
+} elseif ($_GET["page"] == "trans_edit") {
+    $_SESSION["id_transaksi"] = $_GET["id"];
+    $_SESSION["title"] = "Transaksi Validasi";
+    $_SESSION["page"] = "transaksi/trans_validasi.php";
+    header("Location: ../");
+} elseif ($_GET["page"] == "trans_detail") {
+    $_SESSION["id_transaksi"] = $_GET["id"];
+    $_SESSION["title"] = "Transaksi Detail - " . $_SESSION["id_transaksi"];
+    $_SESSION["page"] = "transaksi/trans_detail.php";
+    header("Location: ../");
 }
+
 
 ?>
