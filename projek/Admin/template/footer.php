@@ -57,6 +57,19 @@
         unset($_SESSION["pesan"]);
     endif;
     ?>
+
+    <?php if (isset($_SESSION["alert"])): ?>
+        Swal.fire({
+            position: "center",
+            icon: "info",
+            title: "<?= $_SESSION["alert"] ?>",
+            showConfirmButton: false,
+                timer: 1500
+            });
+            <?php
+            unset($_SESSION["alert"]);
+    endif;
+    ?>
 </script>
 
 </body>

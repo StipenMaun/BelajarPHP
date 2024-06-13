@@ -18,37 +18,26 @@ if (isset($_POST["login"])) {
         if ($data["status"] == 0) {
             $_SESSION["pesan"] = "Akun Anda tidak aktif";
             header("Location: form_login.php");
-        }else {
-            if($data["level"] == 1){
-                $_SESSION["username"] = $data["username"];
-                $_SESSION["is_login"] = true;
+        } else {
+            if ($data["level"] == 1) {
                 $_SESSION["level"] = 1;
-                $_SESSION["title"] = "Dashboard";
-                $_SESSION["page"] = "dashboard.php";
                 header("Location: ../Admin");
-            }elseif ($data["level"] == 2) {
-                $_SESSION["username"] = $data["username"];
-                $_SESSION["is_login"] = true;
+            } elseif ($data["level"] == 2) {
                 $_SESSION["level"] = 2;
-                $_SESSION["title"] = "Dashboard";
-                $_SESSION["page"] = "dashboard.php";
                 header("Location: ../User");
-            }else {
-                $_SESSION["username"] = $data["username"];
-                $_SESSION["is_login"] = true;
+            } else {
                 $_SESSION["level"] = 3;
-                $_SESSION["title"] = "Dashboard";
-                $_SESSION["page"] = "dashboard.php";
                 header("Location: ../Owner");
             }
+            $_SESSION["username"] = $data["username"];
+            $_SESSION["THIS_ID"] = $data["id"];
+            $_SESSION["is_login"] = true;
+            $_SESSION["title"] = "Dashboard";
+            $_SESSION["page"] = "dashboard.php";
         }
-    }else {
+    } else {
         $_SESSION["pesan"] = "Akun Anda tidak terdaftar";
         header("Location: form_login.php");
     }
-    
+
 }
-
-
-
-?>

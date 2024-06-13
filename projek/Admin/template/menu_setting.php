@@ -41,7 +41,9 @@ if ($_GET["page"] == "dashboard") {
     $_SESSION["title"] = "Transaksi Detail - " . $_SESSION["id_transaksi"];
     $_SESSION["page"] = "transaksi/trans_detail.php";
     header("Location: ../");
+} elseif ($_GET["page"] == "profil") {
+    $_SESSION["title"] = "Profil Admin";
+    $_SESSION["page"] = "profil/profil_detail.php";
+    header("Location: ../");
 }
 
-
-?>
